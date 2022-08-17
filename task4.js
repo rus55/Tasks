@@ -113,8 +113,7 @@ function getNewHealth(health, enemyAction, myAction) {
 	return health - (enemyAction.physicalDmg - (myAction.physicArmorPercents / 100 * enemyAction.physicalDmg)) - (enemyAction.magicDmg - (myAction.magicArmorPercents / 100 * enemyAction.magicDmg));
 }
 
-function updateCooldown() {
-	// player.moves.map(item => ({ ...item, cooldownCurrent: item.cooldownCurrent > 0 ? item.cooldownCurrent-- : item.cooldownCurrent }))
+function updateCooldown() {	
 	player.moves = player.moves.map((item) => {
 		item.cooldownCurrent = item.cooldownCurrent > 0 ? --item.cooldownCurrent : item.cooldownCurrent;
 		return item;
